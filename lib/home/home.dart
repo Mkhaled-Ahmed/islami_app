@@ -28,31 +28,18 @@ class _HomeScreenState extends State<HomeScreen> {
           fit: BoxFit.fill,
         ),
         Scaffold(
-          backgroundColor: Colors.transparent,
           appBar: AppBar(
-            backgroundColor: Colors.transparent,
             title: Text(
               "إسلامي",
-              style: GoogleFonts.elMessiri(
-                  fontSize: 30, fontWeight: FontWeight.bold),
             ),
-            centerTitle: true,
           ),
           bottomNavigationBar: BottomNavigationBar(
             currentIndex: index,
-            showSelectedLabels: false,
-            showUnselectedLabels: false,
-            backgroundColor: Color(0xFFB7935F),
-            type: BottomNavigationBarType.fixed,
-            iconSize: 30,
-            elevation: 0,
-            selectedItemColor: Colors.black38,
-            unselectedItemColor: Colors.white,
             onTap: (value) {
               index = value;
               setState(() {});
             },
-            items: [
+            items: const [
               BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ic_quran.png")), label: "Quran"),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ic_sebha.png")), label: "Sebha"),
               BottomNavigationBarItem(icon: ImageIcon(AssetImage("assets/images/ic_radio.png")), label: "Radio"),
@@ -68,9 +55,9 @@ class _HomeScreenState extends State<HomeScreen> {
   }
   List<Widget> tabs = [
     QuranTab(),
-    SebhaTab(),
-    AhadethTab(),
-    RadioTab(),
-    SettingsTab()
+    const SebhaTab(),
+    const AhadethTab(),
+    const RadioTab(),
+    const SettingsTab()
   ];
 }
