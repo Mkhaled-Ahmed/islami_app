@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:islami/sura_details.dart';
-import 'package:islami/sura_model.dart';
+import 'package:islami/screens/tabs/quran/sura_details.dart';
+import 'package:islami/models/surah/sura_model.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranTab extends StatelessWidget {
   QuranTab({super.key});
@@ -142,24 +143,24 @@ class QuranTab extends StatelessWidget {
             'assets/images/ic_quran_top.png',
           ),
         ),
-        const Divider(
+         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: Theme.of(context).dividerColor,
         ),
-        Text("Sura Name", style: GoogleFonts.elMessiri(
+        Text(AppLocalizations.of(context)!.suraName, style: GoogleFonts.elMessiri(
             fontSize: 25, fontWeight: FontWeight.w500),),
-        const Divider(
+         Divider(
           thickness: 3,
-          color: Color(0xFFB7935F),
+          color: Theme.of(context).dividerColor,
         ),
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) =>
-                const Divider(
+                 Divider(
                   endIndent: 50,
                   indent: 50,
                   thickness: 1,
-                  color: Color(0xFFB7935F),
+                  color:Theme.of(context).dividerColor,
                 ),
             itemBuilder: (context, index) {
               return InkWell(
